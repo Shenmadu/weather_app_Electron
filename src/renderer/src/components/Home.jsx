@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react"
-
+import axios, { Axios } from "axios";
 export default function Home() {
 
     const [location, setLocation] = useState("colombo");
     const [weather, setWeather] = useState({});
-
-
-
 
     const getData = () => {
         let loc = document.getElementById("txt").value;
@@ -14,18 +11,13 @@ export default function Home() {
     }
 
 
-    useEffect(() => {
+    useEffect(() => {        
         fetch(`https://api.weatherapi.com/v1/forecast.json?key=007cf56f70d4431d99392717233012&q=${location}&days=4`)
             .then(response => response.json())
             .then(data => {
-                setWeather(data);
-                
+                setWeather(data);                
             });
     },[location])
-
-
-
-
 
     return (
 
