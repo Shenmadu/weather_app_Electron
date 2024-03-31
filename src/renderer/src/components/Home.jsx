@@ -19,7 +19,7 @@ export default function Home() {
             .then(response => response.json())
             .then(data => {
                 setWeather(data);
-                console.log(data);
+                
             });
     },[location])
 
@@ -29,9 +29,9 @@ export default function Home() {
 
     return (
 
-        <div className="container mt-5">
+        <div className="container ">
             {/* search section start */}
-            <div className="row img text-center py-5"  >
+            <div className="row img text-center"  >
 
                 <h2 className="display-5 fw-bold text-body-emphasis " id="title">Weather Today at {location}</h2>
 
